@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@400;600&family=Kanit&family=Ubuntu:ital,wght@1,300&display=swap');
+body{
+    font-family: "Kanit", sans-serif;
+}
+.navbar{
+    font-family: "Bai Jamjuree", sans-serif;
+}
+.motto{
+    font-family: 'Ubuntu', sans-serif;
+}
+.title-th{
+    font-family: 'Bai Jamjuree', sans-serif;
+    font-weight: 600;
+}
+.logo:hover{
+    transition: all 0.5s;
+    animation: neon 1.5s ease-in-out infinite alternate;
+}
+.logo{
+    transition: all 0.5s;
+    animation: none;
+}
+@keyframes neon {
+    from {
+        filter: drop-shadow(0 0 10px #fff)drop-shadow(0 0 20px #fff)drop-shadow(0 0 30px #fff)drop-shadow(0 0 40px #FF9900)drop-shadow(0 0 70px #FF9900)drop-shadow(0 0 80px #FF9900)drop-shadow(0 0 100px #FF9900)drop-shadow(0 0 150px #FF9900);
+    }
+    to {
+        filter: drop-shadow(0 0 5px #fff)drop-shadow(0 0 10px #fff)drop-shadow(0 0 15px #fff)drop-shadow(0 0 20px #FF9900)drop-shadow(0 0 35px #FF9900)drop-shadow(0 0 40px #FF9900)drop-shadow(0 0 50px #FF9900)drop-shadow(0 0 75px #FF9900);
+    }
+}
+
+a.remove-link, a.remove-link:visited, a.remove-link:active {
+    text-decoration: none;
+    color: transparent;
+}
