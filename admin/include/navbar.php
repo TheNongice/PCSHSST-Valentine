@@ -12,10 +12,11 @@
             
         </li>
         <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user-cog"></i> ผู้ใช้: <?php echo $_SESSION['Username']; ?></a>
+            <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user-cog"></i> ผู้ใช้: <?php echo $_SESSION['Username']." [ID:".sprintf('%03d', $_SESSION['ID'])."]"; ?></a>
             <ul class="dropdown-menu">
               <?php if($_SESSION['Roles']=="Admin"){echo '<li><a class="dropdown-item" href="./monitor.php"><i class="fas fa-bug"></i> เมนูเฉพาะกิจ</a></li>';}?>            
-              <li><a class="dropdown-item" href="./changepwd.php"><i class="fas fa-key"></i> เปลี่ยนรหัสผ่าน</a></li><hr> 
+              <li><a class="dropdown-item" href="./changepwd.php"><i class="fas fa-key"></i> เปลี่ยนรหัสผ่าน</a></li><hr>
+              <li><a class="dropdown-item" href="./logout.php?authenpage=1"<i class="fas fa-sync"></i> เปลี่ยนผู้ใช้งาน</a></li>
               <li><a class="dropdown-item" href="./logout.php" style="color: red;"><i class="fas fa-sign-out-alt"></i> ออกจากระบบ</a></li>
             </ul>
         </li>

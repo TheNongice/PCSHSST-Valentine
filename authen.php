@@ -30,11 +30,11 @@ session_start();
                         <input type="username" class="form-control" name="Username" id="Username" placeholder=" " required>
                         <label for="floatingInput"><i class="fas fa-user"></i> ชื่อผู้ใช้: </label>
                     </div>
-                    <div class="form-floating">
+                    <div class="form-floating mb-3">
                         <input type="password" class="form-control" name="Password" id="Password" placeholder=" " required>
                         <label for="floatingPassword"><i class="fas fa-key"></i> รหัสผ่าน: </label>
                     </div>
-                    <center style="padding-top: 0.4rem;"><button type="submit" class="btn btn-success btn-lg"><i class="fas fa-check-circle"></i> เข้าสู่ระบบ</button></center>
+                    <center style="padding-top: 0.4rem;"><button type="submit" id="submit" class="btn btn-success btn-lg"><i class="fas fa-check-circle"></i> เข้าสู่ระบบ</button></center>
                 </form>
             </div>
         </div>
