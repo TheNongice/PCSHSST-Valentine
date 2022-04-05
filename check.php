@@ -25,7 +25,5 @@ include('./config.php');
    }
    
    ?>
-   <!--Footer-->
-   <?php include('./include/footbar.php');?> 
 </body>
 </html>

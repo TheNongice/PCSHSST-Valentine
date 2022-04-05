@@ -2,6 +2,9 @@
 error_reporting(0);
 include('./config.php');
 session_start();
+if(isset($_SESSION['Login'])){
+    header('Location: /admin');
+}
 ?>
 <!DOCTYPE html>
 <html lang="th">
@@ -39,7 +42,5 @@ session_start();
             </div>
         </div>
     </div>
-    <!--Footer-->
-    <?php include('./include/footbar.php'); ?>
 </body>
 </html>

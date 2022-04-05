@@ -1,6 +1,8 @@
 <?php
     session_start();
-    if((isset($_SESSION['Roles'])) && ($_SESSION['Roles']=="Admin")){
+    if(!isset($_POST['Username'])){
+        die('API ERROR: กรุณาตั้งชื่อผู้ใช้งาน<br><a href="../admin/monitor.php"><< GO BACK >></a>');
+    }elseif((isset($_SESSION['Roles'])) && ($_SESSION['Roles']=="Admin")){
         require_once('../config.php');
         // Check repeat username.
         $user = mysqli_real_escape_string($conn,$_POST['Username']);

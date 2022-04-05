@@ -40,7 +40,10 @@ session_start();
                         <input type="password" class="form-control" name="PasswordVerify" id="PasswordVerify" placeholder=" " required minlength="8">
                         <label for="floatingPassword"><i class="fas fa-key"></i> ยืนยันรหัสผ่าน: </label>
                     </div>
-                    <center style="padding-top: 0.4rem;"><button class="btn btn-lg btn-success" type="submit">บันทึกข้อมูล</button></center>
+                    <center style="padding-top: 1rem;">
+                        <button class="btn btn-lg btn-success" type="submit"><i class="fas fa-save"></i> บันทึกข้อมูล</button>
+                        <a href="/admin" class="btn btn-lg btn-danger"><i class="fas fa-home"></i> กลับสู่หน้าหลัก</a>
+                    </center>
                 </form>
             </div>
         </div>

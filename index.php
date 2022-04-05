@@ -1,8 +1,5 @@
 <?php include('./config.php'); 
 session_start();
-if(isset($_SESSION['Login'])){
-    header('Location: /admin/');
-}
 ?>
 <!DOCTYPE html>
 <html lang="th">
@@ -45,6 +42,6 @@ if(isset($_SESSION['Login'])){
             </div>
         </div>
     </div>
-    <?php include('./include/footbar.php');?>
+    <?php include('./api/announce_api.php');?>
 </body>
 </html>

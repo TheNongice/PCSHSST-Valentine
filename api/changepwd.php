@@ -20,6 +20,7 @@
 
         }
     }else{
-        header('Location: ../');
+		die("You don't have access this page!");
+        
     }
 ?>

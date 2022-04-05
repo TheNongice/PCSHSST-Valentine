@@ -1,3 +1,4 @@
+<?php include("../config.php"); ?>
 <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #B66E01;">
   <div class="container-sm">
     <a class="navbar-brand" href="/">
@@ -24,3 +25,16 @@
     </div>
   </div>
 </nav>
+<div class="container-fluid bg-dark text-white">
+        <div class="container-lg" style="padding: 2rem;">
+            <div class="row">
+                <div class="col-sm-2">
+                    <img src="../img/user.png" class="img-fluid" alt="Logo Council" width="150">
+                </div>
+                <div class="col-sm-10">
+                    <h1 class="title-th" style="padding-top: 10px;">สวัสดี! <?php echo $_SESSION['Firstname'].' '.$_SESSION['Lastname'];?></h1>
+                    <p class="title-th">คุณเข้ามาหน้านี้เวลา: <mark><?php echo date("H:i:s น. :: d/m/Y");?></mark></p>
+                </div>
+            </div>
+        </div>
+    </div>

@@ -22,15 +22,40 @@ if(!isset($_SESSION['Login'])){
 <body>
     <!--Navbar-->
     <?php include('./include/navbar.php');?>
-    <div class="container-fluid bg-dark text-white">
-        <div class="container-lg" style="padding: 2rem;">
-            <div class="row">
-                <div class="col-sm-2">
-                    <img src="../img/user.png" class="img-fluid" alt="Logo Council" width="150">
+    <!--Content-->
+    <div class="container-sm" style="padding: 1rem;">
+        <div class="row">
+            <div class="col-sm-3">
+                <div class="card">
+                    <div class="card-header text-white" style="background-color: #B66E01;">
+                        เมนูด่วน <?php echo "[{$_SESSION['Username']} :: ".sprintf('%03d', $_SESSION['ID'])."]";?>
+                    </div>
+                    <ul class="list-group list-group-flush card-link">
+                        <li class="list-group-item"><a href="./"><i class="fas fa-home"></i> หน้าหลัก</a></li>
+                        <li class="list-group-item"><a href="./changepwd.php"><i class="fas fa-key"></i> เปลี่ยนรหัสผ่าน</a></li>
+                        <li class="list-group-item"><a href="./announce_pub.php"><i class="fas fa-bullhorn"></i> แก้ไขประกาศ</a></li>
+                        <li class="list-group-item"><a href="./logout.php" style="color:red;"><i class="fas fa-sign-out-alt"></i> ออกจากระบบ</a></li>
+                    </ul>
                 </div>
-                <div class="col-sm-10">
-                    <h1 class="title-th" style="padding-top: 10px;">สวัสดี! <?php echo $_SESSION['Firstname'].' '.$_SESSION['Lastname'];?></h1>
-                    <p class="title-th">คุณเข้ามาหน้านี้เวลา: <mark><?php echo date("h:i:sa")." (UTC)";?></mark></p>
+            </div>
+            <div class="col-sm-9">
+                <div class="card">
+                    <div class="card-header">
+                        <!--Marquee Announce-->
+                        <div class="row">
+                            <div class="col-sm-3 card-header bg-warning">
+                                <i class="fas fa-bullhorn"></i> ประกาศ:
+                            </div>
+                            <div class="col-sm-9 card">
+                                <marquee onmouseover="this.stop();" onmouseout="this.start();" behavior="" direction=""><?php echo announce_show($conn);?></marquee>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <!--Menu-->
+                            Hello World!
+                        <!--End of Menu-->
+                    </div>
                 </div>
             </div>
         </div>
@@ -52,7 +77,7 @@ if(!isset($_SESSION['Login'])){
     }if((isset($_SESSION['msg_monitor'])) && ($_SESSION['nofi_tell_pwd'] != 1)){
         echo $_SESSION['msg_monitor'];
         $_SESSION['nofi_tell_pwd'] = 1;
-        $_SESSION['msg_monitor'] = "";
+        unset($_SESSION['msg_monitor']);
     }
     ?>
 </body>
