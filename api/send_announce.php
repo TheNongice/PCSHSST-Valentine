@@ -7,8 +7,9 @@
         die();
     }else{
         include('../config.php');
-        error_reporting(1);
+        error_reporting(0);
         $msg = $_POST['editor'];
+        $msg = mysqli_real_escape_string($conn,$msg);
         $user = $_SESSION['Username'];
         $t=time();
         $final_date = date("d/m/Y",$t);

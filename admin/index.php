@@ -38,12 +38,12 @@ if(!isset($_SESSION['Login'])){
                     </ul>
                 </div>
             </div>
-            <div class="col-sm-9">
+            <div class="col-sm-9 mt-2">
                 <div class="card">
-                    <div class="card-header">
+                    <div class="card-header bg-warning">
                         <!--Marquee Announce-->
                         <div class="row">
-                            <div class="col-sm-3 card-header bg-warning">
+                            <div class="col-sm-3 card-header">
                                 <i class="fas fa-bullhorn"></i> ประกาศ:
                             </div>
                             <div class="col-sm-9 card">
@@ -53,7 +53,39 @@ if(!isset($_SESSION['Login'])){
                     </div>
                     <div class="card-body">
                         <!--Menu-->
-                            Hello World!
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <div class="card text-white mt-2" style="background-color: #B66E01;">
+                                    <div class="card-header">เปลี่ยนรหัสผ่าน</div>
+                                    <div class="card-body">
+                                        <h5 class="card-title"><i class="fas fa-key"></i></h5>
+                                        <p class="card-text">ควรเปลี่ยนรหัสผ่านเมื่อได้รับการรีเซ๊ทรหัสหรือรู้สึกว่ารหัสผ่านเดิมไม่ปลอดภัย</p>
+                                        <a href="./changepwd.php" class="btn btn-success stretched-link">กดเพื่อกระทำ</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="card text-white bg-primary mt-2">
+                                    <div class="card-header">แก้ไขการประกาศ</div>
+                                    <div class="card-body">
+                                        <h5 class="card-title"><i class="fas fa-bullhorn"></i></h5>
+                                        <p class="card-text">ช่องทางอัพเดตข้อมูลประกาศหน้าหลักของเว็บไซต์</p>
+                                        <a href="./announce_pub.php" class="btn btn-success stretched-link">กดเพื่อกระทำ</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                            <div class="card text-white bg-info mt-2">
+                                    <div class="card-header">...</div>
+                                    <div class="card-body">
+                                        <h5 class="card-title"><i class="fas fa-business-time"></i></h5>
+                                        <p class="card-text">เราจะมาพบกับพวกคุณ เร็ว ๆ นี้อย่างแน่นอน!</p>
+                                        <a onclick="showSoon();" class="btn btn-success stretched-link">กดเพื่อกระทำ</a>
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
                         <!--End of Menu-->
                     </div>
                 </div>
@@ -80,5 +112,16 @@ if(!isset($_SESSION['Login'])){
         unset($_SESSION['msg_monitor']);
     }
     ?>
+    <script>
+        function showSoon(){
+            Swal.fire({
+                icon: 'error',
+                title: 'อุ่ย...',
+                text: 'ขอโทษนะ แต่เรายังไม่ทำหน้าอื่น ๆ เลย ;~;',
+                confirmButtonColor: '#F27474',
+                confirmButtonText: 'ขอโทษคั้บ ;-;'
+            });
+        }
+    </script>
 </body>
 </html>
