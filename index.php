@@ -20,7 +20,7 @@ session_start();
             include('include/navbar.php');
         ?>
     <div class="container" style="padding-top: 1rem;">
-        <div class="row">
+        <div class="row m-2">
             <div class="col-md-5 align-self-center">
                 <h1>ระบบส่งรักส่งยิ้ม</h1>
                 <p class="blockquote-footer motto">Council of PCSHSST</p>

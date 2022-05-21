@@ -20,6 +20,17 @@
             ?>
         </li>
         <li class="nav-item d-flex justify-content-center">
+            <?php
+            if(isset($error_temp)){
+              if($error_temp <= 0){
+                  echo '<a class="nav-link" href="/check.php"><i class="fas fa-eye"></i> ตรวจสอบสถานะ</a>';
+              }
+            }else{
+                echo '<a class="nav-link" href="/check.php"><i class="fas fa-eye"></i> ตรวจสอบสถานะ</a>';
+            }
+            ?>
+        </li>
+        <li class="nav-item d-flex justify-content-center">
             <a class="nav-link" href="/authen.php"><i class="fas fa-user-cog"></i> ระบบเจ้าหน้าที่</a>
         </li>
       </ul>

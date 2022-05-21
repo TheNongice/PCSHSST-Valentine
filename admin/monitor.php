@@ -77,9 +77,7 @@ if(isset($_GET['phpinfo'])&&($_GET['phpinfo'] == 'true')){ // show phpinfo
 	include('./include/monitor/announce.php');
 	back();
 }if(isset($_GET['muimiu0y'])){
-	$_SESSION['msg_monitor'] = '<script>alert("มุยน่ารักเกินต้านมากมาก นะระจีงๆ >//<");</script>';
-	$_SESSION['nofi_tell_pwd'] = 0;
-	header('Location: monitor.php');
+	header('Location: https://facebook.com/profile.php?id=100025918968703');
 }if(isset($_GET['ngixx']) || isset($_GET['TheNongice']) || isset($_GET['thenongice']) || isset($_GET['thengi'])){
 	header('Location: https://facebook.com/carice2549');
 }

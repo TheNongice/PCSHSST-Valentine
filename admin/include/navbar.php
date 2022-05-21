@@ -29,7 +29,7 @@
         <div class="container-lg" style="padding: 2rem;">
             <div class="row">
                 <div class="col-sm-2">
-                    <img src="../img/user.png" class="img-fluid" alt="Logo Council" width="150">
+                    <img src="../img/user" class="img-fluid" alt="Logo Council" width="150">
                 </div>
                 <div class="col-sm-10">
                     <h1 class="title-th" style="padding-top: 10px;">สวัสดี! <?php echo $_SESSION['Firstname'].' '.$_SESSION['Lastname'];?></h1>

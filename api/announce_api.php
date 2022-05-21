@@ -4,6 +4,10 @@
     $sql = "SELECT * from council_01.announce where id=2";
     $result = mysqli_query($conn,$sql);
     $rows = mysqli_fetch_array($result);
+    if($rows['texts']==""){
+        $rows['texts'] = '<h3 class="text-center"><strong>**ไม่มีประกาศ**</strong></h3>';
+        $rows['lastchanged'] = "";
+    }
 ?>
 <div class="container-sm formal-text" style="padding: 1rem;">
     <div class="card">

@@ -18,7 +18,7 @@ if(isset($_SESSION['Login'])){
     <script src="https://kit.fontawesome.com/7b30317d32.js" crossorigin="anonymous"></script>
     <link rel="icon" href="img/logo.svg" type="image/svg">
     <link rel="stylesheet" href="./style.css">
-    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link rel="manifest" href="./mainfest/manifest.webmanifest">
 </head>
 <body>
@@ -42,5 +42,35 @@ if(isset($_SESSION['Login'])){
             </div>
         </div>
     </div>
+    <script>
+        document.addEventListener('contextmenu', event => event.preventDefault());
+        document.onkeydown = function (e) {
+            // disable F12 key
+            if(e.keyCode == 123) {              
+                return false;
+            }
+            // disable I key
+            if(e.ctrlKey && e.shiftKey && e.keyCode == 73){              
+                return false;
+            }
+            // disable J key
+            if(e.ctrlKey && e.shiftKey && e.keyCode == 74) {              
+                return false;
+            }
+            // disable U key
+            if(e.ctrlKey && e.keyCode == 85) {              
+                return false;
+            }
+        }
+        
+        console.log(
+            "%cหยุด!",
+            "color:red;font-family:system-ui;font-size:4rem;font-weight:bold"
+        );
+        console.log(
+            "%cนี่เป็นคุณสมบัติการทำงานของเบราว์เซอร์ที่มีจุดมุ่งหมายให้ใช้สำหรับผู้พัฒนา/ทดสอบระบบ \nมิควรทำกระการใด ๆ ที่อาจทำให้ระบบเกิดความเสียหาย หากพบอาจถูกดำเนินคดีทางกฏหมาย",
+            "color:white;font-family:system-ui;font-size:2rem;font-weight:bold"
+        );
+    </script>
 </body>
 </html>
