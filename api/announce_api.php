@@ -1,24 +1,14 @@
 <?php
-    error_reporting(0);
     // โค้ดเหล่านี้จะทำงานก็ต่อเมื่อหน้าเพจนั้นๆ เชื่อมกับ config.php เท่านั้น!!!
-    $sql = "SELECT * from council_01.announce where id=2";
-    $result = mysqli_query($conn,$sql);
-    $rows = mysqli_fetch_array($result);
-    if($rows['texts']==""){
-        $rows['texts'] = '<h3 class="text-center"><strong>**ไม่มีประกาศ**</strong></h3>';
-        $rows['lastchanged'] = "";
+    $id = $_GET['id_t'];
+    if($id == "1"){
+        die("**ID ประกาศนี้เป็นประกาศสงวนของเจ้าหน้าที่ ไม่สามารถอ่านได้**");
     }
+    $sql = "SELECT * from council_01.announce where id={$id}";
+    $result = mysqli_query($conn,$sql);
+    if(mysqli_num_rows($result) == 0){
+        die("**ไม่พบหมายเลขประกาศที่ท่านเรียกขอ**");
+    }
+    $rows = mysqli_fetch_array($result);
+
 ?>
-<div class="container-sm formal-text" style="padding: 1rem;">
-    <div class="card">
-        <div class="card-header bg-warning">
-            <i class="fas fa-bullhorn"></i> ประกาศ
-        </div>
-        <div class="card-body">
-            <?php 
-            echo $rows['texts'];
-            echo $rows['lastchanged'];
-            ?>
-        </div>
-    </div>
-</div>

@@ -19,39 +19,34 @@ session_start();
         <?php 
             include('include/navbar.php');
         ?>
-    <div class="container" style="padding-top: 1rem;">
-        <div class="row m-2">
-            <div class="col-md-5 align-self-center">
-                <h1>ระบบส่งรักส่งยิ้ม</h1>
-                <p class="blockquote-footer motto">Council of PCSHSST</p>
+    <div class="container mt-4">
+        <a href="/" class="my-4" style="color: red;"><i class="fas fa-arrow-alt-circle-left"></i> ย้อนกลับไปหน้าแรก</a>
+    </div>
+    <div class="container formal-text" style="padding-top: 1rem;">
+        <div class="card">
+            <div class="card-header bg-warning">
+                <i class="fas fa-bullhorn"></i> ประกาศ
             </div>
-            <div class="col-md-7">
-                <div class="d-grid gap-2">
-                    <?php
-                        error_reporting(0);
-                        if($error_temp <= 0){
-                            echo '<a role="button" class="btn btn-outline-primary btn-lg" href="./request.php"><i class="fab fa-wpforms"></i> แบบฟอร์มส่งรักส่งยิ้ม</a>';
-                            echo '<a role="button" class="btn btn-outline-warning btn-lg" href="./check.php"><i class="fas fa-eye"></i> ตรวจสอบสถานะ</a>';
-                        }else{
-                            echo '<a role="button" class="btn btn-outline-primary btn-lg disabled" aria-disabled="true"><i class="fab fa-wpforms"></i> แบบฟอร์มส่งรักส่งยิ้ม</a>';
-                            echo '<a role="button" class="btn btn-outline-warning btn-lg disabled" aria-disabled="true"><i class="fas fa-eye"></i> ตรวจสอบสถานะ</a>';
-                        }
-                    ?>
-                    <a role="button" class="btn btn-outline-danger btn-lg" href="./authen.php"><i class="fas fa-user-cog"></i> สำหรับเจ้าหน้าที่</a>
-                </div>
+            <div class="card-body">
+                <?php 
+                    include_once('api/announce_api.php');
+                    echo $rows['texts'];
+                    echo $rows['lastchanged'];
+                ?>
+
             </div>
         </div>
     </div>
     <?php
         // เช็กว่ามีกี่แถวใน DB
         $sql = "SELECT * FROM announce";
-        $query = mysqli_query($conn,$sql) or die('ไม่สามารถดึงข้อมูลประกาศได้!');
+        $query = mysqli_query($conn,$sql) or die("ไม่สามารถเชื่อมไปยังฐานข้อมูลได้ในขณะนี้");
         $num_row = mysqli_num_rows($query);
         // ให้ดึงมาเฉพาะ 3 อันล่าสุด
     ?>
-    <div class="container my-4">
+    <div class="container my-4 formal-text">
         <div class="card">
-            <div class="card-header bg-warning">
+            <div class="card-header text-white" style="background-color: #282D7E;">
                 <i class="fas fa-bullhorn"></i> ประกาศล่าสุด
             </div>
             <div class="card-body formal-text">

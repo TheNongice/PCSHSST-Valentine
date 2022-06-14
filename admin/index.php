@@ -16,7 +16,7 @@ if(!isset($_SESSION['Login'])){
         <script src="../js/bootstrap.min.js"></script>
         <script src="https://kit.fontawesome.com/7b30317d32.js" crossorigin="anonymous"></script>
         <link rel="icon" href="../img/logo.svg" type="image/svg">
-        <link rel="stylesheet" href="../style.css">
+        <link rel="stylesheet" href="./style.css">
         <link rel="manifest" href="../mainfest/manifest.webmanifest">
     </head>
 <body>
@@ -34,6 +34,7 @@ if(!isset($_SESSION['Login'])){
                         <li class="list-group-item"><a href="./"><i class="fas fa-home"></i> หน้าหลัก</a></li>
                         <li class="list-group-item"><a href="./changepwd.php"><i class="fas fa-key"></i> เปลี่ยนรหัสผ่าน</a></li>
                         <li class="list-group-item"><a href="./announce_pub.php"><i class="fas fa-bullhorn"></i> แก้ไขประกาศ</a></li>
+                        <li class="list-group-item"><a href="./list.php"><i class="fas fa-clipboard-check"></i> ตรวจสอบรายชื่อผู้จอง</a></li>
                         <li class="list-group-item"><a href="./logout.php" style="color:red;"><i class="fas fa-sign-out-alt"></i> ออกจากระบบ</a></li>
                     </ul>
                 </div>
@@ -76,11 +77,11 @@ if(!isset($_SESSION['Login'])){
                             </div>
                             <div class="col-sm-4">
                             <div class="card text-white bg-info mt-2">
-                                    <div class="card-header">...</div>
+                                    <div class="card-header">ตรวจสอบรายชื่อ</div>
                                     <div class="card-body">
                                         <h5 class="card-title"><i class="fas fa-business-time"></i></h5>
-                                        <p class="card-text">เราจะมาพบกับพวกคุณ เร็ว ๆ นี้อย่างแน่นอน!</p>
-                                        <a onclick="showSoon();" class="btn btn-success stretched-link">กดเพื่อกระทำ</a>
+                                        <p class="card-text">ตรวจสอบรายชื่อผู้จองเพื่อจัดการสถานะหรือออเดอร์ใด ๆ </p>
+                                        <a href="./list.php" class="btn btn-success stretched-link">กดเพื่อกระทำ</a>
                                     </div>
                                 </div>
                             </div>
@@ -112,16 +113,5 @@ if(!isset($_SESSION['Login'])){
         unset($_SESSION['msg_monitor']);
     }
     ?>
-    <script>
-        function showSoon(){
-            Swal.fire({
-                icon: 'error',
-                title: 'อุ่ย...',
-                text: 'ขอโทษนะ แต่เรายังไม่ทำหน้าอื่น ๆ เลย ;~;',
-                confirmButtonColor: '#F27474',
-                confirmButtonText: 'ขอโทษคั้บ ;-;'
-            });
-        }
-    </script>
 </body>
 </html>

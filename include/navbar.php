@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #ac7625;">
   <div class="container-sm">
     <a class="navbar-brand" href="/">
         <img src="./img/logo.svg" class="logo" style="width: 10vh;">
@@ -12,10 +12,10 @@
             <?php
             if(isset($error_temp)){
               if($error_temp <= 0){
-                  echo '<a class="nav-link" href="/request.php"><i class="fab fa-wpforms"></i> แบบฟอร์มขอ</a>';
+                  echo '<a class="nav-link" href="/request.php"><i class="fab fa-wpforms"></i> แบบฟอร์ม</a>';
               }
             }else{
-                echo '<a class="nav-link" href="/request.php"><i class="fab fa-wpforms"></i> แบบฟอร์มขอ</a>';
+                echo '<a class="nav-link" href="/request.php"><i class="fab fa-wpforms"></i> แบบฟอร์ม</a>';
             }
             ?>
         </li>
@@ -31,7 +31,10 @@
             ?>
         </li>
         <li class="nav-item d-flex justify-content-center">
-            <a class="nav-link" href="/authen.php"><i class="fas fa-user-cog"></i> ระบบเจ้าหน้าที่</a>
+            <a class="nav-link" href="/faq.html"><i class="fas fa-question"></i> คำถามที่พบบ่อย</a>
+        </li>
+        <li class="nav-item d-flex justify-content-center">
+            <a class="nav-link" href="/authen.php"><i class="fas fa-user-cog"></i> สำหรับเจ้าหน้าที่</a>
         </li>
       </ul>
     </div>

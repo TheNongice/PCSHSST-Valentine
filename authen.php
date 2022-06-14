@@ -12,7 +12,7 @@ if(isset($_SESSION['Login'])){
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>:: ระบบเจ้าหน้าที่ ::</title>
+    <title>:: เจ้าหน้าที่ ::</title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <script src="js/bootstrap.min.js"></script>
     <script src="https://kit.fontawesome.com/7b30317d32.js" crossorigin="anonymous"></script>
@@ -27,7 +27,7 @@ if(isset($_SESSION['Login'])){
     <div class="container-md" style="padding-top: 1rem;">
         <div class="card">
             <div class="card-body">
-                <h4><i class="far fa-address-card"></i> ระบบเจ้าหน้าที่</h4>
+                <h4><i class="far fa-address-card"></i> เจ้าหน้าที่</h4>
                 <form action="./api/login.php" method="post" autocomplete="off">
                     <div class="form-floating mb-3">
                         <input type="username" class="form-control" name="Username" id="Username" placeholder=" " required>
@@ -69,7 +69,7 @@ if(isset($_SESSION['Login'])){
         );
         console.log(
             "%cนี่เป็นคุณสมบัติการทำงานของเบราว์เซอร์ที่มีจุดมุ่งหมายให้ใช้สำหรับผู้พัฒนา/ทดสอบระบบ \nมิควรทำกระการใด ๆ ที่อาจทำให้ระบบเกิดความเสียหาย หากพบอาจถูกดำเนินคดีทางกฏหมาย",
-            "color:white;font-family:system-ui;font-size:2rem;font-weight:bold"
+            "font-family:system-ui;font-size:2rem;font-weight:bold"
         );
     </script>
 </body>

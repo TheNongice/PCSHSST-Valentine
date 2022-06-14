@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@400;600&family=Kanit&family=Ubuntu:ital,wght@1,300&display=swap&family=Sarabun&display=swap');
 body{
     font-family: "Kanit", sans-serif;
-    background-color: rgb(246, 243, 234);
 }
 .formal-text{
     font-family: 'Sarabun', sans-serif;
@@ -41,46 +40,4 @@ a.remove-link, a.remove-link:visited, a.remove-link:active {
 .bg-data{
     background-color: #252b98;
     color: #fff;
-}
-/* Light mode */
-@media (prefers-color-scheme: dark) {
-    body {
-        background-color: #1A1110;
-        color: white;
-    }
-    p{
-        color: white;
-    }
-    h1{
-        color: white;
-    }
-
-    h2{
-        color: white;
-    }
-    .faq-hr{
-        color: white;
-    }
-    .card{
-        background-color: #17202A;
-        
-    }
-    .form-control{
-        background-color: #2E4053;
-        color: white;
-    }
-    .form-select{
-        background-color: #2E4053;
-        color: white;
-    }
-    nav{
-        background-color: #2E4053;
-        color: white;
-    }
-    .text-css{
-        color: black;
-    }
-    .modal-content{
-        color: black;
-    }
 }

@@ -35,7 +35,7 @@ session_start();
            <div class="card-body">
                <form action="" method="get" autocomplete="off">
                     <div class="form-floating mb-3">
-                        <input class="form-control" id="num_books" name="book_id" placeholder="" value="<?php if(isset($_GET['book_id'])){echo $_GET['book_id'];}else{echo"";}?>" required inputmode="numeric" autofocus>
+                        <input class="form-control" id="num_books" name="book_id" placeholder="" required inputmode="numeric" autofocus>
                         <label for="num_books">เลขที่การจอง</label>
                     </div>
                         <center>
@@ -77,7 +77,7 @@ session_start();
         );
         console.log(
             "%cนี่เป็นคุณสมบัติการทำงานของเบราว์เซอร์ที่มีจุดมุ่งหมายให้ใช้สำหรับผู้พัฒนา/ทดสอบระบบ \nมิควรทำกระการใด ๆ ที่อาจทำให้ระบบเกิดความเสียหาย หากพบอาจถูกดำเนินคดีทางกฏหมาย",
-            "color:white;font-family:system-ui;font-size:2rem;font-weight:bold"
+            "font-family:system-ui;font-size:2rem;font-weight:bold"
         );
     </script>
 </body>

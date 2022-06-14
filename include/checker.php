@@ -11,7 +11,7 @@ if(mysqli_num_rows($result) == 1){
     $date_req = $data['date_req'];
     $check = 1;
 }else{
-    echo "<script>Swal.fire({title: 'พบข้อผิดพลาด',text: 'ไม่พบการลงทะเบียนในฐานข้อมูล!',icon: 'error',confirmButtonText: 'รับทราบ!',confirmButtonColor: '#F27474',footer: '<p class=\"fst-italic\">หากทำการลงทะเบียนแล้วโปรดแจ้งผู้ดูแลระบบ</p>'})</script>";
+    echo "<script>Swal.fire({title: 'พบข้อผิดพลาด',text: 'ไม่พบการลงทะเบียนในฐานข้อมูล!',icon: 'error',confirmButtonText: 'รับทราบ!',confirmButtonColor: '#F27474',footer: '<p class=\"fst-italic text-css\">หากทำการลงทะเบียนแล้วโปรดแจ้งผู้ดูแลระบบ</p>'})</script>";
 }
 ?>
 <div class="container-sm">

@@ -16,7 +16,7 @@
     <script src="../js/bootstrap.min.js"></script>
     <script src="https://kit.fontawesome.com/7b30317d32.js" crossorigin="anonymous"></script>
     <link rel="icon" href="../img/logo.svg" type="image/svg">
-    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="./style.css">
     <link rel="manifest" href="../mainfest/manifest.webmanifest">
     <script src="../js/ckeditor/ckeditor.js"></script>
 </head>
@@ -33,6 +33,7 @@
                             <li class="list-group-item"><a href="./"><i class="fas fa-home"></i> หน้าหลัก</a></li>
                             <li class="list-group-item"><a href="./changepwd.php"><i class="fas fa-key"></i> เปลี่ยนรหัสผ่าน</a></li>
                             <li class="list-group-item"><a href="./announce_pub.php"><i class="fas fa-bullhorn"></i> แก้ไขประกาศ</a></li>
+                            <li class="list-group-item"><a href="./list.php"><i class="fas fa-clipboard-check"></i> ตรวจสอบรายชื่อผู้จอง</a></li>
                             <li class="list-group-item"><a href="./logout.php" style="color:red;"><i class="fas fa-sign-out-alt"></i> ออกจากระบบ</a></li>
                         </ul>
                     </div>
@@ -44,7 +45,8 @@
                         </div>
                         <div class="card-body">
                             <form action="../api/send_announce.php" method="post">
-								<h4 class="text-center" style="color: red;">**ไม่ควรใส่รูปภาพในหน้าประกาศ**</h4>
+                                <h4 class="text-center" style="color: red;">**ไม่ควรใส่รูปภาพในหน้าประกาศ**</h4>
+                                <input type="text" class="form-control" name="titles" value="<?php echo title_announce($conn);?>">
                                 <textarea name="editor" id="ckeditor"><?php echo global_announce($conn);?></textarea>
                                 <center style="padding-top: 1rem;"><button class="btn btn-success" type="submit"><i class="fas fa-save"></i> บันทึกข้อมูล</button></center>
                             </form>

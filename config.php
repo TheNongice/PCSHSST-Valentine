@@ -5,7 +5,7 @@
 	    header('Location: dontsupport.php');
     }
     $conn = mysqli_connect('localhost','root','','council_01');
-    $tokens_line = "YOUR_LINE_TOKENS";
+    $tokens_line = "YOUR_LINE_NOTIFY_TOKENS";
     $msg_01 = "หากท่านพบข้อความต่อไปนี้โปรดติดต่อผู้ดูแลระบบโดยไวที่สุด";
     if(!$conn){
         $error_temp +=1;
@@ -19,11 +19,25 @@
     }
     // ระบบดึงประกาศ Global
     function global_announce($conn){
-        $sql = "SELECT * from council_01.announce where id=2";
+        $sql_1 = "SELECT * FROM announce";
+        $query = mysqli_query($conn,$sql_1);
+        $max_id = mysqli_num_rows($query);
+        $sql = "SELECT * from council_01.announce where id={$max_id}";
         $result = mysqli_query($conn,$sql);
         $rows = mysqli_fetch_array($result)['texts'];
         return $rows;
     }
+
+    function title_announce($conn){
+        $sql_1 = "SELECT * FROM announce";
+        $query = mysqli_query($conn,$sql_1);
+        $max_id = mysqli_num_rows($query);
+        $sql = "SELECT * from council_01.announce where id={$max_id}";
+        $result = mysqli_query($conn,$sql);
+        $rows = mysqli_fetch_array($result)['titles'];
+        return $rows;
+    }
+
 
     function msgLine($tokens,$msg){
         ini_set('display_errors', 1);

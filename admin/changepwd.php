@@ -13,7 +13,7 @@ session_start();
     <script src="../js/bootstrap.min.js"></script>
     <script src="https://kit.fontawesome.com/7b30317d32.js" crossorigin="anonymous"></script>
     <link rel="icon" href="../img/logo.svg" type="image/svg">
-    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="./style.css">
     <link rel="manifest" href="../mainfest/manifest.webmanifest">
 </head>
 <body>
