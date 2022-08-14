@@ -5,7 +5,7 @@
 	    header('Location: dontsupport.php');
     }
     $conn = mysqli_connect('localhost','root','','council_01');
-    $tokens_line = "svdr3xFLuKKbVhrD1wW0UyQrb4t1CBMR6mjyN9xfay8";
+    $tokens_line = "YOUR_LINE_TOKENS";
     $msg_01 = "หากท่านพบข้อความต่อไปนี้โปรดติดต่อผู้ดูแลระบบโดยไวที่สุด";
     if(!$conn){
         $error_temp +=1;
