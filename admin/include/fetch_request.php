@@ -68,7 +68,7 @@ while($row = mysqli_fetch_assoc($result)){
   <ul class="pagination justify-content-center">
     <li class="page-item"><a class="page-link" href="./list.php?p=1"><i class="fas fa-step-backward"></i></a></li>
     <?php for($i=1;$i<=$total_page;$i++){ ?>
-            <li class="page-item"><a class="page-link" href="./list.php?p=<?php echo $i;?>"><?php echo $i;?></a></li>
+            <li class="page-item <?php if($i==$page_id){echo "active";}?>"><a class="page-link" href="./list.php?p=<?php echo $i;?>"><?php echo $i;?></a></li>
         <?php } ?>
     <li class="page-item"><a class="page-link" href="./list.php?p=<?php echo $total_page;?>"><i class="fas fa-step-forward"></i></a></li>
   </ul>

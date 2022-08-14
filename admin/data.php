@@ -52,7 +52,7 @@
                     <h3><i class="fas fa-user"></i> ผู้ขอ : <?php echo $name_rq." ({$nickname_rq}) <strong>[ID:{$id}]</strong>";?></h3>
                 </div>
                 <div class="col-2">
-                    <a href="/admin/list.php" type="button" class="btn btn-primary px-4"><i class="fas fa-angle-left"></i></a>
+                    <a href="javascript:history.back();" type="button" class="btn btn-primary px-4"><i class="fas fa-angle-left"></i></a>
                 </div>
             </div>
             <hr style="border: 3px solid #f4a024;">

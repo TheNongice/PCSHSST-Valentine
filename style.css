@@ -69,6 +69,10 @@ a.remove-link, a.remove-link:visited, a.remove-link:active {
         background-color: #2E4053;
         color: white;
     }
+    .form-control:focus{
+        background-color: #2E4053;
+        color: white;
+    }    
     .form-select{
         background-color: #2E4053;
         color: white;
@@ -83,4 +87,7 @@ a.remove-link, a.remove-link:visited, a.remove-link:active {
     .modal-content{
         color: black;
     }
+}
+.navbar.navbar-expand-lg.navbar-dark li a {
+    color: rgb(214, 205, 205);
 }

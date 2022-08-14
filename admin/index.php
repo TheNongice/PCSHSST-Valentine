@@ -54,6 +54,73 @@ if(!isset($_SESSION['Login'])){
                     </div>
                     <div class="card-body">
                         <!--Menu-->
+                        <h4 class="title-th mx-1"><i class="fas fa-atlas"></i> สรุปข้อมูล:</h4>
+                        <div class="row mt-2">
+                            <div class="col-sm-4">
+                                <div class="card bg-primary text-white mb-2">
+                                    <div class="card-header">
+                                        <i class="fas fa-sigma"></i> จำนวนผู้ขอทั้งหมด
+                                    </div>
+                                    <div class="card-body">
+                                            <div class="row">
+                                                <div class="col-sm-9">
+                                                    <?php 
+                                                        $query = "SELECT * FROM request_list";
+                                                        $result = mysqli_query($conn,$query);
+                                                        echo "<h1 class='text-end'>".mysqli_num_rows($result)."</h1>";
+                                                    ?>
+                                            </div>
+                                            <div class="col-sm">
+                                                คน
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="card bg-success text-white mb-2">
+                                    <div class="card-header">
+                                        <i class="fas fa-clipboard-check"></i> จำนวนผู้ที่ชำระแล้ว
+                                    </div>
+                                    <div class="card-body">
+                                            <div class="row">
+                                                <div class="col-sm-9">
+                                                    <?php 
+                                                        $query = "SELECT * FROM request_list WHERE status_pub='ชำระค่าจองแล้ว'";
+                                                        $result = mysqli_query($conn,$query);
+                                                        echo "<h1 class='text-end'>".mysqli_num_rows($result)."</h1>";
+                                                    ?>
+                                            </div>
+                                            <div class="col-sm">
+                                                คน
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="card bg-danger text-white mb-2">
+                                    <div class="card-header">
+                                        <i class="fas fa-exclamation-triangle"></i> จำนวนผู้ไม่ชำระทั้งหมด
+                                    </div>
+                                    <div class="card-body">
+                                            <div class="row">
+                                                <div class="col-sm-9">
+                                                    <?php 
+                                                        $query = "SELECT * FROM request_list WHERE status_pub='ยังไม่ชำระค่าจอง'";
+                                                        $result = mysqli_query($conn,$query);
+                                                        echo "<h1 class='text-end'>".mysqli_num_rows($result)."</h1>";
+                                                    ?>
+                                            </div>
+                                            <div class="col-sm">
+                                                คน
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <hr>
                         <div class="row">
                             <div class="col-sm-4">
                                 <div class="card text-white mt-2" style="background-color: #B66E01;">

@@ -8,6 +8,22 @@
         header('Location: ../request.php');
     }
     $error_msg = "<script>Swal.fire({title: 'พบข้อผิดพลาด',text: 'กรุณากรอกข้อมูลให้ถูกต้อง/ครบถ้วน!',icon: 'error',confirmButtonText: 'รับทราบ!',confirmButtonColor: '#F27474'})</script>";
+
+    // เด้งออกถ้ายังไม่กรอกข้อมูลให้เรียบร้อย
+    if(empty($_POST['QUEST1']) == 1 || empty($_POST['QUEST2']) == 1 || empty($_POST['QUEST3']) == 1){
+        error_redirect($error_msg);
+        die();
+    }
+    if($_POST['CLASS_REQUEST'] == "ชั้นมัธยมศึกษาปีที่ ...." || $_POST['CLASS_NO_RECIEVE'] == ""){
+        error_redirect($error_msg);
+    }
+    if($_POST['CLASS_RECIEVE'] == "ชั้นมัธยมศึกษาปีที่ ...." || $_POST['CLASS_NO_RECIEVE'] == ""){
+        error_redirect($error_msg);
+    }
+    if($_POST['NAME_RECIEVE'] == "NULL" || $_POST['NAME_REQUEST'] == "NULL"){
+        error_redirect($error_msg);
+    }
+    
     // ดึงชื่อคนขอ
     $query_re = "SELECT * FROM class_std{$_POST['CLASS_REQUEST']}{$_POST['CLASS_NO_REQUEST']} where id={$_POST['NAME_REQUEST']}";
     $result_re = mysqli_query($conn,$query_re) or error_redirect($error_msg);
@@ -32,15 +48,6 @@
     $question5 = $_POST['QUEST5'];
     $amount_photo = (int)$_POST['AMOUNT_PHOTO'];
     $dates_request = date("H:i:s น. d/m/Y");
-
-
-    // เด้งออกถ้ายังไม่กรอกข้อมูลให้เรียบร้อย
-    if($_POST['CLASS_REQUEST'] == "ชั้นมัธยมศึกษาปีที่ ...." || $_POST['CLASS_NO_RECIEVE'] == ""){
-        error_redirect($error_msg);
-    }elseif($_POST['CLASS_RECIEVE'] == "ชั้นมัธยมศึกษาปีที่ ...." || $_POST['CLASS_NO_RECIEVE'] == ""){
-        error_redirect($error_msg);
-    }
-
 
     // คำนวณราคา
     if($amount_photo > 10 || $amount_photo < 1){

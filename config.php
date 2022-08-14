@@ -1,11 +1,11 @@
 <?php
-    error_reporting(0);
+    error_reporting(1);
     $ua = htmlentities($_SERVER['HTTP_USER_AGENT'], ENT_QUOTES, 'UTF-8');
     if (preg_match('~MSIE|Internet Explorer~i', $ua) || (strpos($ua, 'Trident/7.0') !== false && strpos($ua, 'rv:11.0') !== false)) {
 	    header('Location: dontsupport.php');
     }
     $conn = mysqli_connect('localhost','root','','council_01');
-    $tokens_line = "YOUR_LINE_NOTIFY_TOKENS";
+    $tokens_line = "svdr3xFLuKKbVhrD1wW0UyQrb4t1CBMR6mjyN9xfay8";
     $msg_01 = "หากท่านพบข้อความต่อไปนี้โปรดติดต่อผู้ดูแลระบบโดยไวที่สุด";
     if(!$conn){
         $error_temp +=1;

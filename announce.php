@@ -11,9 +11,19 @@ session_start();
         <link href="css/bootstrap.min.css" rel="stylesheet">
         <script src="js/bootstrap.min.js"></script>
         <script src="https://kit.fontawesome.com/7b30317d32.js" crossorigin="anonymous"></script>
+        <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-solid-rounded/css/uicons-solid-rounded.css'>
         <link rel="icon" href="img/logo.svg" type="image/svg">
         <link rel="stylesheet" href="./style.css">
         <link rel="manifest" href="./mainfest/manifest.webmanifest">
+        <!--Social tags-->
+        <meta property="og:title" content="ส่งรักส่งยิ้ม">
+        <meta property="og:description" content="ส่งรักส่งยิ้มโดย คณะกรรมการนักเรียนโรงเรียนวิทยาศาสตร์จุฬาภรณราชวิทยาลัย สตูล">
+        <meta property="og:image" content="https://songrak.ngixx.in.th/img/social_thumb.png">
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="ส่งรักส่งยิ้ม">
+        <meta name="twitter:url" content="https://songrak.ngixx.in.th">
+        <meta name="twitter:description" content="ส่งรักส่งยิ้มโดย คณะกรรมการนักเรียนโรงเรียนวิทยาศาสตร์จุฬาภรณราชวิทยาลัย สตูล">
+        <meta name="twitter:image" content="https://songrak.ngixx.in.th/img/social_thumb.png">        
     </head>
     <body>
         <?php 
@@ -56,7 +66,7 @@ session_start();
                 $result = mysqli_query($conn,$sql);
                 $rows = mysqli_fetch_array($result);
             ?>
-            <div class="row">
+            <div class="row" onclick="window.location.href = './announce.php?id_t=<?php echo $num;?>'">
                 <div class="col-sm-10">
                     <?php echo $rows['titles'];?>
                 </div>

@@ -14,6 +14,6 @@
             echo "<option value=\"" . $Result['id'] . "\">".$Result['fullname']." "."(".$Result['nickname'].")</option>";
         }
     }else{
-        echo "<option>ไม่พบข้อมูล</option>";
+        echo "<option value='NULL'>ไม่พบข้อมูล</option>";
     }
 ?>

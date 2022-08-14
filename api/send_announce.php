@@ -17,7 +17,12 @@
         $final_time = date("H:i:s");
         //$sql = "UPDATE council_01.announce SET `texts` = '$msg', `lastchanged` = '<hr><em>ประกาศจาก <code>$user</code> เมื่อ: <code>$final_date $final_time</code></em>' WHERE (`id` = '2')";
         $final_etime = $final_date. " ". $final_time;
-        $sql = "INSERT INTO announce (`texts`,`lastchanged`,`titles`,`dates_change`) VALUES ('{$msg}','<hr><em>ประกาศจาก <code>$user</code> เมื่อ: <code>{$final_date} {$final_time}</code></em>','{$titles}','{$final_etime}')";
+        if($_SESSION['Roles'] == 'Admin'){
+            $verify = "<i style=\"color: lightblue;\" class=\"fas fa-check-circle\" aria-hidden=\"true\"></i>";
+        }else{
+            $verify = "";
+        }
+        $sql = "INSERT INTO announce (`texts`,`lastchanged`,`titles`,`dates_change`) VALUES ('{$msg}','<hr>ประกาศจาก <code>{$user}</code> {$verify} เมื่อ: <code>{$final_date} {$final_time}</code>','{$titles}','{$final_etime}')";
         $result = mysqli_query($conn,$sql) or die("ไม่สามารถเปลี่ยนแปลงข้อมูลได้ โปรดลองอีกครั้งในภายหลัง");
         $_SESSION['msg_monitor'] = "<script>Swal.fire({title: 'แจ้งเตือน!',text: 'เปลี่ยนแปลงข้อมูลประกาศสำเร็จ',icon: 'success',confirmButtonColor: '#5EBA7D',confirmButtonText: 'รับทราบ!'})</script>";
         $_SESSION['nofi_tell_pwd'] = 0;

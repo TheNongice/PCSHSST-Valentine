@@ -20,6 +20,15 @@ if(isset($_SESSION['Login'])){
     <link rel="stylesheet" href="./style.css">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link rel="manifest" href="./mainfest/manifest.webmanifest">
+    <!--Social tags-->
+    <meta property="og:title" content="ส่งรักส่งยิ้ม">
+    <meta property="og:description" content="ส่งรักส่งยิ้มโดย คณะกรรมการนักเรียนโรงเรียนวิทยาศาสตร์จุฬาภรณราชวิทยาลัย สตูล">
+    <meta property="og:image" content="https://songrak.ngixx.in.th/img/social_thumb.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="ส่งรักส่งยิ้ม">
+    <meta name="twitter:url" content="https://songrak.ngixx.in.th">
+    <meta name="twitter:description" content="ส่งรักส่งยิ้มโดย คณะกรรมการนักเรียนโรงเรียนวิทยาศาสตร์จุฬาภรณราชวิทยาลัย สตูล">
+    <meta name="twitter:image" content="https://songrak.ngixx.in.th/img/social_thumb.png">    
 </head>
 <body>
     <!--Navbar-->

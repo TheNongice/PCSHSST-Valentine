@@ -7,9 +7,17 @@ if(!isset($_SESSION['Roles'])){
     }
 }
 ?>
-<form class="pure-form" action="../../api/adduser.php" method="post">
-    <input type="text" placeholder="Username" name="Username" required>
+<form action="../../api/adduser.php" method="post">
+<div class="grid">
+    <label for="Firstname">Firstname:
     <input type="text" placeholder="Firstname" name="Firstname" required>
+    </label>
+    <label for="Lastname">Lastname:
     <input type="text" placeholder="Lastname" name="Lastname" required>
+    </label>
+</div>
+    <label for="Username">Username:
+    <input type="text" placeholder="Username" name="Username" required>
+    </label>
     <button type="submit" class="pure-button" style="background: #1CB841;color:#fff;">Add user</button>
 </form>

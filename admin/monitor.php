@@ -7,6 +7,10 @@ if((isset($_SESSION['msg_monitor'])) && ($_SESSION['msg_monitor'] != 1)){
 function back(){
     echo '<hr><center><a style="color: red;" href="monitor.php"><< Clear Debugger >></a></center><hr>';
 }
+if(isset($_GET['php'])){
+	phpinfo();
+	die();
+}
 ?>
 <!DOCTYPE html>
 <html lang="th">
@@ -15,7 +19,7 @@ function back(){
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>:: DEBUGGER ::</title>
-	<link rel="stylesheet" href="https://unpkg.com/purecss@2.1.0/build/pure-min.css" integrity="sha384-yHIFVG6ClnONEA5yB5DJXfW2/KC173DIQrYoZMEtBvGzmf0PKiGyNEqe9N6BNDBH" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css">
 	<script type="text/javascript" src="../js/ckeditor/ckeditor.js"></script>
 </head>
 <body>
@@ -50,7 +54,7 @@ function back(){
 		<td><a href="../admin/">BACK TO MAIN STAFF</a></td>
 	</tr>
 	<tr>
-		<td>6</td>
+		<td>7</td>
 		<td><a style="color:red;" href="../admin/monitor.php?logout=true">CLEAR SESSION (LOGOUT)</a></td>
 	</tr>
 	</tbody>
@@ -64,7 +68,7 @@ if($_SESSION['Roles'] != "Admin"){
 }
 if(isset($_GET['phpinfo'])&&($_GET['phpinfo'] == 'true')){ // show phpinfo
     back();
-    phpinfo();
+    echo "<center><iframe width='1080' height='900' src='/admin/monitor.php?php'></iframe></center>";
 }if(isset($_GET['logout'])&&($_GET['logout'] == 'true')){ // Remove session (Logout)
     header('Location: logout.php');
 }if(isset($_GET['adduser'])&&($_GET['adduser'] == 'true')){ // Add user menu
@@ -76,7 +80,7 @@ if(isset($_GET['phpinfo'])&&($_GET['phpinfo'] == 'true')){ // show phpinfo
 }if(isset($_GET['announce'])&&($_GET['announce'] == 'true')){ // Announce Editor
 	include('./include/monitor/announce.php');
 	back();
-}if(isset($_GET['muimiu0y'])){
+}if(isset($_GET['muimiu0y']) || isset($_GET['mui']) || isset($_GET['muimui']) || isset($_GET['muimiu'])){
 	header('Location: https://facebook.com/profile.php?id=100025918968703');
 }if(isset($_GET['ngixx']) || isset($_GET['TheNongice']) || isset($_GET['thenongice']) || isset($_GET['thengi'])){
 	header('Location: https://facebook.com/carice2549');

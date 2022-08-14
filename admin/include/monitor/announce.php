@@ -9,7 +9,7 @@
         $dump_text = mysqli_fetch_array($result)['texts'];
     }
 ?>
-<form class="pure-form" method="POST" action="./include/monitor/api_an.php">
+<form method="POST" action="./include/monitor/api_an.php">
     <textarea name="editor" id="ckeditor"><?php echo $dump_text;?></textarea>
     <script>
         CKEDITOR.replace( 'ckeditor', {

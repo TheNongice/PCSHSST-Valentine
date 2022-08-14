@@ -7,7 +7,7 @@
         </div>
         <div class="container-sm mt-4">
             <div class="card">
-                <div class="card-header bg-warning">ขั้นตอนที่ 1 :: ข้อมูลผู้ขอ</div>
+                <div class="card-header bg-warning text-white">ขั้นตอนที่ 1 :: ข้อมูลผู้ขอ</div>
                 <div class="card-body">
                     <div class="mb-3">
                         <label for="Class_res" class="form-label">ชั้นที่กำลังศึกษา</label>
@@ -42,7 +42,7 @@
         </div>
             <div class="container-sm mt-4">
                 <div class="card">
-                    <div class="card-header bg-info">ขั้นตอนที่ 2 :: ข้อมูลผู้ถูกขอ</div>
+                    <div class="card-header bg-info text-white">ขั้นตอนที่ 2 :: ข้อมูลผู้ถูกขอ</div>
                     <div class="card-body">
                         <div class="mb-3">
                             <label for="Class_res" class="form-label">ชั้นที่กำลังศึกษา</label>
@@ -164,9 +164,8 @@
             icon: 'warning',
             showCancelButton: true,
             confirmButtonColor: '#5eba7d',
-            cancelButtonColor: '#d33',
             confirmButtonText: 'ยืนยันการส่ง!',
-            cancelButtonText: 'ยกเลิกแก้ไขต่อ'
+            cancelButtonText: 'แก้ไขต่อ'
             }).then((result) => {
             if (result.isConfirmed) {
                 document.getElementById('box-form').submit();
@@ -178,33 +177,33 @@
             photo_sel = $(this).val();
             $('#Class_re').on('input',function(){
                 let _this = $(this);
-                let CLASS_RE_INPUT = _this.val();
+                let CLASS_RE_INPUT = Number(_this.val());
                 if(CLASS_RE_INPUT!="ชั้นมัธยมศึกษาปีที่ ..."){
-                    if(CLASS_RE_INPUT=="4" || CLASS_RE_INPUT=="5" || CLASS_RE_INPUT=="6"){
-                        $("#Class_No_re .jq").remove();
-                        $("#Class_No_re").append('<option value="5" class="jq">5 (Lambda)</option>');
-                        $("#Class_No_re").append('<option value="6" class="jq">6 (Alpha)</option>');
+                    if(CLASS_RE_INPUT > 3){
+                        $("#Class_No_re .sem").remove();
+                        $("#Class_No_re").append('<option value="5" class="sem">5 (Lambda)</option>');
+                        $("#Class_No_re").append('<option value="6" class="sem">6 (Alpha)</option>');
                     }else{
-                        $("#Class_No_re .jq").remove();
+                        $("#Class_No_re .sem").remove();
                     }
                 }else{
-                    $("#Class_No_re .jq").remove();
+                    $("#Class_No_re .sem").remove();
                 }
             });
             // ขั้นตอนที่ 2
             $('#Class_rec').on('input',function(){
                 let _this = $(this);
-                let CLASS_RE_INPUT = _this.val();
+                let CLASS_RE_INPUT = Number(_this.val());
                 if(CLASS_RE_INPUT!="ชั้นมัธยมศึกษาปีที่ ..."){
-                    if(CLASS_RE_INPUT=="4" || CLASS_RE_INPUT=="5" || CLASS_RE_INPUT=="6"){
-                        $("#Class_No_rec .jq").remove();
-                        $("#Class_No_rec").append('<option value="5" class="jq">5 (Lambda)</option>');
-                        $("#Class_No_rec").append('<option value="6" class="jq">6 (Alpha)</option>');
+                    if(CLASS_RE_INPUT > 3){
+                        $("#Class_No_rec .sem").remove();
+                        $("#Class_No_rec").append('<option value="5" class="sem">5 (Lambda)</option>');
+                        $("#Class_No_rec").append('<option value="6" class="sem">6 (Alpha)</option>');
                     }else{
-                        $("#Class_No_rec .jq").remove();
+                        $("#Class_No_rec .sem").remove();
                     }
                 }else{
-                    $("#Class_No_rec .jq").remove();
+                    $("#Class_No_rec .sem").remove();
                 }
             });
             
@@ -317,7 +316,7 @@
         );
         console.log(
             "%cนี่เป็นคุณสมบัติการทำงานของเบราว์เซอร์ที่มีจุดมุ่งหมายให้ใช้สำหรับผู้พัฒนา/ทดสอบระบบ \nมิควรทำกระการใด ๆ ที่อาจทำให้ระบบเกิดความเสียหาย หากพบอาจถูกดำเนินคดีทางกฏหมาย",
-            "color:white;font-family:system-ui;font-size:2rem;font-weight:bold"
+            "font-family:system-ui;font-size:2rem;font-weight:bold"
         );
     </script>
 </form>

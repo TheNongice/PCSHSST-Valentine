@@ -1,7 +1,8 @@
 <?php 
-error_reporting(0);
+error_reporting(1);
 include('./config.php');
 session_start();
+setcookie("SONGRAK_CHECKER",$_GET['book_id'],time() + (86400 * 45));
 ?>
 <!DOCTYPE html>
 <html lang="th">
@@ -18,6 +19,15 @@ session_start();
     <link rel="stylesheet" href="./style.css">
     <link rel="manifest" href="./mainfest/manifest.webmanifest">
     <noscript><meta http-equiv="refresh" content="0; url=./dontsupport.php"></noscript>
+    <!--Social tags-->
+    <meta property="og:title" content="ส่งรักส่งยิ้ม">
+    <meta property="og:description" content="ส่งรักส่งยิ้มโดย คณะกรรมการนักเรียนโรงเรียนวิทยาศาสตร์จุฬาภรณราชวิทยาลัย สตูล">
+    <meta property="og:image" content="https://songrak.ngixx.in.th/img/social_thumb.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="ส่งรักส่งยิ้ม">
+    <meta name="twitter:url" content="https://songrak.ngixx.in.th">
+    <meta name="twitter:description" content="ส่งรักส่งยิ้มโดย คณะกรรมการนักเรียนโรงเรียนวิทยาศาสตร์จุฬาภรณราชวิทยาลัย สตูล">
+    <meta name="twitter:image" content="https://songrak.ngixx.in.th/img/social_thumb.png">    
 </head>
 <body>
     <!--Navbar-->
@@ -35,7 +45,7 @@ session_start();
            <div class="card-body">
                <form action="" method="get" autocomplete="off">
                     <div class="form-floating mb-3">
-                        <input class="form-control" id="num_books" name="book_id" placeholder="" required inputmode="numeric" autofocus>
+                        <input class="form-control" id="num_books" name="book_id" placeholder="" required inputmode="numeric" autofocus value="<?php if(isset($_COOKIE['SONGRAK_CHECKER'])){echo $_COOKIE['SONGRAK_CHECKER'];}?>">
                         <label for="num_books">เลขที่การจอง</label>
                     </div>
                         <center>
